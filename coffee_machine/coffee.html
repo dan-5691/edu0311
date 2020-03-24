@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Кофемашина</title>
+    <style>
+      .coffee-item{
+        background:tan;
+        border-radius:50px 0 0 50px;
+        font-size:2rem;
+        margin:0.5rem;
+      }
+      .coffee-btn{
+        background:Brown;
+        width:50px;
+        height:50px;
+        border-radius:50%;
+        border:1px solid rgb(0,0,0);
+      }
+      .coffee-btn:hover{
+        background:red;
+        cursor:pointer;
+      }
+      .coffee-btn:active{
+        background:maroon;
+      }
+      #display{
+        background:navy;
+        color:white;
+        width:95%;
+        height:150px;
+        border:4px groove black;
+        margin:0.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container my-4">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="coffee-item row">
+            <div class="coffee-btn" onclick="getCoffee('Американо');"></div>
+            <span>Американо - 38р.</span>
+          </div>
+          <div class="coffee-item row">
+            <div class="coffee-btn" onclick="getCoffee('Каппучино');"></div>
+            <span>Каппучино - 53р.</span>
+          </div>
+          <div class="coffee-item row">
+            <div class="coffee-btn" onclick="getCoffee('Еспрессо');"></div>
+            <span>Еспрессо - 46р.</span>
+          </div>
+          <div class="coffee-item row">
+            <div class="coffee-btn" onclick="getCoffee('Латте');"></div>
+            <span>Латте - 47р.</span>
+          </div>
+          <div class="coffee-item row">
+            <div class="coffee-btn" onclick="getCoffee('Гляссе');"></div>
+            <span>Гляссе - 97р.</span>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="row">
+            <div class="col-6">
+              <div id="display"></div>
+            </div>
+            <div class="col-6">
+              <input type="text" id="money">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+      let money = document.getElementById('money');
+      function getCoffee(name){
+          console.log(`Кофе ${name} готов`);
+      }
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
