@@ -81,10 +81,31 @@
     <script>
       let money = document.getElementById('money');
       function getCoffee(name,price){
-        if (money.value >= price)
+        if (money.value >= price){
+          money.value = money.value - price;
           console.log(`Кофе ${name} готов`);
+        }
         else
           console.log(`Не достаточно денег`);
+      }
+      
+      function getChange(num){
+        if (num>=10){
+          console.log(10);
+          getChange(num-10);
+        }
+        else if (num>=5){
+          console.log(5);
+          getChange(num-5);
+        }
+        else if (num>=2){
+          console.log(2);
+          getChange(num-2);
+        }
+        else if (num>=1){
+          console.log(1);
+          getChange(num-1);
+        }
       }
     </script>
     <!-- Optional JavaScript -->
