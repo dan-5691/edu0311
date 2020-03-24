@@ -37,11 +37,12 @@
         height:150px;
         border:4px groove black;
         margin:0.5rem;
+        padding:1rem;
       }
     </style>
   </head>
   <body>
-    <div class="container my-4">
+    <div class="container my-4 border">
       <div class="row">
         <div class="col-sm-6">
           <div class="coffee-item row">
@@ -77,16 +78,18 @@
         </div>
       </div>
     </div>
+    <img src="img/50rub.jpg" alt="">
+    <img src="img/100rub.jpg" alt="">
+    <img src="img/500rub.jpg" alt="">
     
     <script>
-      let money = document.getElementById('money');
       function getCoffee(name,price){
         if (money.value >= price){
           money.value = money.value - price;
-          console.log(`Кофе ${name} готов`);
+          display.innerHTML = `Кофе ${name} готов<br>`;
         }
         else
-          console.log(`Не достаточно денег`);
+          display.innerHTML = `Не достаточно денег`;
       }
       
       function getChange(num){
@@ -107,6 +110,27 @@
           getChange(num-1);
         }
       }
+      
+      /*function getChange1(num){
+        while (num>0){
+          if (num>=10){
+          console.log(10);
+          num = num - 10;
+          }
+          else if (num>=5){
+            console.log(5);
+            num = num - 5;
+          }
+          else if (num>=2){
+            console.log(2);
+            num = num - 2;
+          }
+          else if (num>=1){
+            console.log(1);
+            num = num - 1;
+          }
+        }
+      }*/
     </script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
