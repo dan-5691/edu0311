@@ -45,23 +45,23 @@
       <div class="row">
         <div class="col-sm-6">
           <div class="coffee-item row">
-            <div class="coffee-btn" onclick="getCoffee('Американо');"></div>
+            <div class="coffee-btn" onclick="getCoffee('Американо',38);"></div>
             <span>Американо - 38р.</span>
           </div>
           <div class="coffee-item row">
-            <div class="coffee-btn" onclick="getCoffee('Каппучино');"></div>
+            <div class="coffee-btn" onclick="getCoffee('Каппучино',53);"></div>
             <span>Каппучино - 53р.</span>
           </div>
           <div class="coffee-item row">
-            <div class="coffee-btn" onclick="getCoffee('Еспрессо');"></div>
+            <div class="coffee-btn" onclick="getCoffee('Еспрессо',46);"></div>
             <span>Еспрессо - 46р.</span>
           </div>
           <div class="coffee-item row">
-            <div class="coffee-btn" onclick="getCoffee('Латте');"></div>
+            <div class="coffee-btn" onclick="getCoffee('Латте',47);"></div>
             <span>Латте - 47р.</span>
           </div>
           <div class="coffee-item row">
-            <div class="coffee-btn" onclick="getCoffee('Гляссе');"></div>
+            <div class="coffee-btn" onclick="getCoffee('Гляссе',97);"></div>
             <span>Гляссе - 97р.</span>
           </div>
         </div>
@@ -80,8 +80,11 @@
     
     <script>
       let money = document.getElementById('money');
-      function getCoffee(name){
+      function getCoffee(name,price){
+        if (money.value >= price)
           console.log(`Кофе ${name} готов`);
+        else
+          console.log(`Не достаточно денег`);
       }
     </script>
     <!-- Optional JavaScript -->
