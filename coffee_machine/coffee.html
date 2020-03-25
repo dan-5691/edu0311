@@ -83,6 +83,8 @@
     <img src="img/500rub.jpg" alt="">
     
     <script>
+      let bills = document.querySelectorAll('img[src$="rub.jpg"]');
+    
       function getCoffee(name,price){
         if (money.value >= price){
           money.value = money.value - price;
@@ -110,27 +112,29 @@
           getChange(num-1);
         }
       }
-      
-      /*function getChange1(num){
-        while (num>0){
-          if (num>=10){
-          console.log(10);
-          num = num - 10;
+
+      for (let i=0; i<bills.length; i++){
+        bills[i].addEventListener('mousedown',()=>{
+        
+          bills[i].style.position = 'absolute';
+
+          let onMouseMove = (event)=>{
+            bills[i].style.top = event.pageY-bills[i].offsetHeight/2+'px';
+            bills[i].style.left = event.pageX-bills[i].offsetWidth/2+'px';
           }
-          else if (num>=5){
-            console.log(5);
-            num = num - 5;
-          }
-          else if (num>=2){
-            console.log(2);
-            num = num - 2;
-          }
-          else if (num>=1){
-            console.log(1);
-            num = num - 1;
-          }
-        }
-      }*/
+          
+          document.addEventListener('mousemove',onMouseMove);
+          
+          bills[i].addEventListener('mouseup', ()=>{
+            document.removeEventListener('mousemove',onMouseMove);
+          });
+          
+        });
+        
+        bills[i].ondragstart = ()=>{
+          return false;
+        };
+      }
     </script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
