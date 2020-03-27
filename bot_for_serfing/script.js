@@ -11,7 +11,8 @@
 
 
 let googleInput = document.getElementsByName('q')[0];
-let searchWord  = "Гобой";
+let searchWords  = ["Гобой","Флейта","Саксофон","Валторна","Кларнет","Фагот"];
+let searchWord  = searchWords[getRandom(0,searchWords.length)];
 let i = 0;
 
 if (document.getElementsByName("btnK")[1] != undefined){
@@ -25,20 +26,29 @@ if (document.getElementsByName("btnK")[1] != undefined){
     },getRandom(50, 1000));
 }
 else if (location.host == "www.google.com"){
+    let flag = true;
     let links = document.links;
     for (let i=0; i<links.length; i++){
         if (links[i].href.indexOf('xn----7sbab5aqcbiddtdj1e1g.xn--p1ai') != -1){
+            flag = false;
             links[i].click();
             break;
         }
     }
+    if (flag){
+        if (document.getElementsByClassName("YyVfkd")[0].innerText>9)
+            location.href = "https://www.google.com/";
+        else
+            setTimeout(()=>{pnnext.click();},getRandom(1000,5000));
+    }
 }
 else {
     let links = document.links;
-    let timerId = setInterval(()=>{
+    setInterval(()=>{
         let index = getRandom(0,links.length);
         console.log(links[index]);
         links[index].click();
+        if (getRandom(0,101)<=30) location.href = "https://www.google.com/";
     },getRandom(3000, 8000));
 }
 
