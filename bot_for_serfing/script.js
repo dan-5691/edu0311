@@ -11,12 +11,21 @@
 
 let googleInput = document.getElementsByName('q')[0];
 googleInput.value = "Гобой";
-document.getElementsByName("btnK")[1].click();
 
-let links = document.links;
-for (let i=0; i<links.length; i++){
-    if (links[i].href.indexOf('xn----7sbab5aqcbiddtdj1e1g.xn--p1ai') != -1){
-        links[i].click();
-        break;
+
+
+try {
+    document.getElementsByName("btnK")[1].click();
+}catch(e){
+    let links = document.links;
+    for (let i=0; i<links.length; i++){
+        if (links[i].href.indexOf('xn----7sbab5aqcbiddtdj1e1g.xn--p1ai') != -1){
+            links[i].click();
+            break;
+        }
     }
 }
+
+
+
+
