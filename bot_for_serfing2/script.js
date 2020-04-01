@@ -8,10 +8,10 @@
 // @match        https://xn----7sbab5aqcbiddtdj1e1g.xn--p1ai/*
 // @grant        none
 // ==/UserScript==
-
 let googleInput = document.getElementsByName('q')[0];
 let btnK = document.getElementsByName('btnK')[1];
-let searchWord = 'Гобой';
+let searchWords= ['Гобой','Кларнет','Саксофон','Флейта','Валторна','Фагот'];
+let searchWord = searchWords[getRandom(0,searchWords.length)];
 let i = 0;
 let links = document.links;
 
@@ -25,11 +25,21 @@ if (btnK!=undefined){
     },500);
 }
 else if (location.hostname == "www.google.com"){
+    let flag = true;
     for (let i=0; i<links.length; i++){
         if (links[i].href.indexOf('xn----7sbab5aqcbiddtdj1e1g.xn--p1ai')!=-1){
+            flag = false;
             links[i].click();
             break;
         }
+    }
+    if (flag){
+        setTimeout(()=>{
+            if(document.querySelector('.YyVfkd').innerText < 10)
+                pnnext.click();
+            else
+                location.href = "https://www.google.com/";
+        },3800);
     }
 }
 else {
